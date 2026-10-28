@@ -1,9 +1,5 @@
 # Expense Tracker on AWS (Serverless)
 
-A personal finance tool: log income and spending, set monthly budgets, see where the money goes, and move data in and out with CSV. Day 2 of a 20-project AWS portfolio, built on a fully serverless stack with infrastructure defined in one SAM template.
-
-**Cost: $0 on the AWS free tier** at personal scale.
-
 ## Features
 
 - **Transactions:** add, edit (including moving a transaction to another month), delete, search, and filter by category.
