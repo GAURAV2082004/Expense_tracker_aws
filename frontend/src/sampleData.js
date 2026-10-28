@@ -1,0 +1,49 @@
+export const SAMPLE_CSV = `date,type,category,amount,note
+2026-08-01,income,Salary,85000,Monthly salary
+2026-08-03,expense,Rent,22000,Flat rent
+2026-08-05,expense,Bills,1850,Electricity and broadband
+2026-08-07,expense,Transport,640,Metro card top-up
+2026-08-09,expense,Food,780,Groceries
+2026-08-12,expense,Health,1200,Pharmacy
+2026-08-14,expense,Entertainment,899,Streaming and a movie
+2026-08-17,expense,Food,1450,Dinner out
+2026-08-20,expense,Shopping,5400,Clothes
+2026-08-23,expense,Transport,520,Cab rides
+2026-08-26,expense,Food,960,Groceries
+2026-09-01,income,Salary,85000,Monthly salary
+2026-09-03,expense,Rent,22000,Flat rent
+2026-09-05,expense,Bills,1850,Electricity and broadband
+2026-09-07,expense,Transport,640,Metro card top-up
+2026-09-09,expense,Food,780,Groceries
+2026-09-12,expense,Health,3400,Dental check-up
+2026-09-14,expense,Entertainment,899,Streaming and a movie
+2026-09-15,income,Freelance,12000,Website project
+2026-09-17,expense,Food,1450,Dinner out
+2026-09-20,expense,Shopping,2999,Clothes
+2026-09-23,expense,Transport,520,Cab rides
+2026-09-26,expense,Food,960,Groceries
+2026-10-01,income,Salary,85000,Monthly salary
+2026-10-03,expense,Rent,22000,Flat rent
+2026-10-05,expense,Bills,1850,Electricity and broadband
+2026-10-07,expense,Transport,640,Metro card top-up
+2026-10-09,expense,Food,780,Groceries
+2026-10-10,income,Freelance,8500,Dashboard fixes
+2026-10-12,expense,Health,1200,Pharmacy
+2026-10-14,expense,Entertainment,899,Streaming and a movie
+2026-10-17,expense,Food,1450,Dinner out
+2026-10-20,expense,Shopping,2999,Clothes
+2026-10-23,expense,Transport,520,Cab rides
+2026-10-26,expense,Food,960,Groceries
+2026-10-27,expense,Food,340,Lunch`;
+
+export const DEMO_MONTHS = ["2026-08", "2026-09", "2026-10"];
+
+export const getDemoSignatures = () => {
+  const lines = SAMPLE_CSV.trim().split("\n").slice(1);
+  return new Set(
+    lines.map((line) => {
+      const parts = line.split(",");
+      return `${parts[0]}|${parts[1]}|${parts[2]}|${Number(parts[3])}|${parts.slice(4).join(",")}`;
+    })
+  );
+};
